@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfólio Pessoal</title>
+</head>
+<body>
+    <!--*Nome: Denilson da Costa Gonçalves
+      RU: 3976149
+     -->
+    <div id="container">
+        <nav id="menu">
+            <ul>
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+
+        <section id="sobre">
+            <h1>Sobre Mim</h1>
+            <p>E aí! Eu sou um entusiasta da vida, sempre à procura da próxima aventura seja nos reinos mágicos dos jogos de ação
+            e RPG ou nas páginas imersivas de livros de ficção. Sou um verdadeiro apaixonado por tudo que envolve
+            ficção, desde filmes épicos a séries de TV nerds que só a gente entende.<br><br>
+            
+            Quando não estou explorando mundos fantásticos, você provavelmente me encontrará com a cara enfiada em um livro de ficção científica ou em alguma mesa de estudo, absorvendo conhecimento como um verdadeiro "nerd" orgulhoso.<br><br>
+
+            Além disso, estou sempre pronto para mergulhar em debates sobre universos alternativos, super-heróis, e teorias malucas que só fazem sentido para nós, amantes de nerdisse.<br><br>
+
+            Então, se você quiser discutir estratégias para o próximo jogo, compartilhar recomendações de leitura ou
+            simplesmente papear sobre a última teoria maluca que encontrei, estou aqui para isso! A vida é uma jornada épica, e estou animado para compartilhar minhas experiências, paixões e descobertas contigo. Vamos nessa! </p>
+        </section>
+
+        <section id="formacao">
+            <h1>Formação</h1>
+            <p>Olá! Sou um explorador do vasto mundo da tecnologia, com uma formação acadêmica que mais parece uma jornada épica em TI. Naveguei pelos mares dos códigos, desbravando algoritmos e conquistando conhecimento em sistemas e desenvolvimento. Minha formação em TI é como um mapa do tesouro cheio de experiências incríveis, desde os desafios de programação até os momentos de descobertas nos intricados caminhos da informática.<br><br>
+
+            Ah, e quando o assunto é idiomas, considero o inglês meu parceiro de aventuras. Juntos, enfrentamos textos técnicos, desafios de comunicação e até arriscamos algumas piadas nerds em outra língua. É como se o inglês fosse meu sidekick confiável nessa incrível jornada acadêmica.<br><br>
+                
+            Então, se você estiver afim de mergulhar nos bits e bytes, ou apenas bater um papo sobre as nuances da linguagem de Shakespeare na era digital, estou aqui para compartilhar minhas experiências nesse vasto e empolgante universo de TI e idiomas. Vamos codificar juntos nessa jornada! </p>
+        </section>
+
+        <section id="portfolio">
+            <h1>Portfólio</h1>
+            <p>Ei, eu sou um caçador de desafios e conquistas, construindo meu próprio épico no vasto mundo digital. Com um teclado como minha espada e o mouse como meu escudo, mergulhei de cabeça no universo da programação e design.<br><br>
+
+            No meu portfólio, você encontrará uma coleção de batalhas vencidas, desde códigos elegantemente escritos até designs que saltam da tela como personagens de um livro de histórias. Ao navegar pelas páginas do meu portfólio, você verá não apenas linhas de código, mas narrativas inteiras de projetos que ganharam vida.<br><br>
+                
+            De sites interativos a aplicativos funcionais, cada projeto conta uma história única de desafios superados e soluções criativas. Meu portfólio é como um mapa do tesouro, revelando os tesouros de conhecimento e habilidade que adquiri ao longo da minha jornada.<br><br>
+                
+            Então, sinta-se à vontade para explorar, descobrir e, quem sabe, embarcar em uma nova missão digital comigo. Estou sempre pronto para enfrentar novos desafios e expandir meu reino no vasto território do desenvolvimento e design. </p>
+            
+        </section>
+
+        <section id="contato">
+            <h1>Contato</h1>
+            <p>
+                E aí, amigo! Se quiser bater um papo, discutir ideias mirabolantes ou apenas trocar uma ideia sobre algo interessante, estou aqui para isso. Você pode me encontrar facilmente através do formulário mágico de contato abaixo. Basta deixar seu nome, e-mail, e soltar a mensagem. Estou ansioso para ouvir o que você tem a dizer!<br><br>
+
+                **Formulário de Contato:**<br><br>
+                - **Nome:** <br>
+                - **E-mail:** <br>
+                - **Mensagem:** <br><br>
+
+                É como enviar uma coruja, só que um pouco mais rápido. Prometo responder assim que a mensagem voar até mim. Vamos construir algo incrível juntos!
+            </p>
+            
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+            
+                <button type="button" onclick="enviarMensagem()">Enviar Mensagem</button>
+            </form>
+
+            <div id="resultado-contato"></div>
+
+            <script>
+                function enviarMensagem() {
+                    var nome = document.getElementById('name').value;
+                    var email = document.getElementById('email').value;
+                    var mensagem = document.getElementById('message').value;
+
+                    var resultadoDiv = document.getElementById('resultado-contato');
+                    resultadoDiv.innerHTML = `Mensagem enviada por ${nome} (${email}):<br>${mensagem}`;
+                }
+                document.addEventListener('DOMContentLoaded', function () {
+                    var links = document.querySelectorAll('#menu a');
+                    links.forEach(function (link) {
+                        link.addEventListener('click', function (event) {
+                            event.preventDefault();
+                            var targetId = this.getAttribute('href').substring(1);
+                            var targetElement = document.getElementById(targetId);
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        });
+                    });
+                });
+            </script>
+            <footer>
+                <p>© 2023 Denilson Costa</p>
+                <address>
+                  <p>Qualquer semelhança com a realidade é mera coincidencia!!! Textos Ficticio?! Quem sabe... </p>
+                </address>
+            </footer>
+        </section>
+    </div>      
+</body>
+</html>
